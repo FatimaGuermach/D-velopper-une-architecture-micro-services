@@ -4,6 +4,9 @@ import org.example.keynoteservice.entities.Keynote;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.List;
+
 @RepositoryRestResource
-public interface Keynoterepositpry extends JpaRepository<Keynote,Long> {
+public interface KeynoteRepository extends JpaRepository<Keynote,Long> {
+
 }

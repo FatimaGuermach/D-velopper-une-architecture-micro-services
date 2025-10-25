@@ -1,14 +1,11 @@
 package org.example.keynoteservice;
 
-import lombok.Builder;
 import org.example.keynoteservice.entities.Keynote;
-import org.example.keynoteservice.repository.Keynoterepositpry;
+import org.example.keynoteservice.repository.KeynoteRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import java.util.Date;
 
 @SpringBootApplication
 public class KeynoteServiceApplication {
@@ -18,7 +15,7 @@ public class KeynoteServiceApplication {
 
     }
     @Bean
-    CommandLineRunner commandLineRunner(Keynoterepositpry keynoterepositpry) {
+    CommandLineRunner commandLineRunner(KeynoteRepository keynoterepositpry) {
         return args -> {
             keynoterepositpry.save(Keynote.builder()
                     .nom("GUERMACH")

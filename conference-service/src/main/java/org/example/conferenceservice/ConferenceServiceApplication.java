@@ -2,6 +2,7 @@ package org.example.conferenceservice;
 
 import org.example.conferenceservice.entities.Conference;
 import org.example.conferenceservice.entities.Review;
+import org.example.conferenceservice.enums.Conference_type;
 import org.example.conferenceservice.repository.ConferenceRepository;
 import org.example.conferenceservice.repository.ReviewRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -25,7 +26,7 @@ public class ConferenceServiceApplication {
             // === Création des conférences ===
             Conference c1 = conferenceRepository.save(Conference.builder()
                     .titre("abc")
-                    .type("academique")
+                    .type(Conference_type.ACADEMIQUE)
                     .date("01/03/2024")
                     .duree("2h")
                     .nbrinscrit(50)
@@ -34,7 +35,7 @@ public class ConferenceServiceApplication {
 
             Conference c2 = conferenceRepository.save(Conference.builder()
                     .titre("simple faire")
-                    .type("commercial")
+                    .type(Conference_type.COMMERCIALE)
                     .date("02/05/2025")
                     .duree("1h")
                     .nbrinscrit(70)
@@ -43,7 +44,7 @@ public class ConferenceServiceApplication {
 
             Conference c3 = conferenceRepository.save(Conference.builder()
                     .titre("cyber security")
-                    .type("academique")
+                    .type(Conference_type.ACADEMIQUE)
                     .date("05/03/2025")
                     .duree("3h")
                     .nbrinscrit(200)

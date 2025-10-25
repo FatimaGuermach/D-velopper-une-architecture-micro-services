@@ -2,6 +2,7 @@ package org.example.conferenceservice.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.example.conferenceservice.enums.Conference_type;
 
 import java.util.List;
 
@@ -10,7 +11,8 @@ public class Conference {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String titre;
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private  Conference_type type;
     private String date;
     private String duree;
     private  int nbrinscrit;
